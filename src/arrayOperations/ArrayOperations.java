@@ -253,4 +253,20 @@ public class ArrayOperations implements Operations {
         display();
         return 0;
     }
+
+
+    public void printMenu() {
+        System.out.println("press");
+        System.out.println("0 - to quit\n" +
+                "1 - to create an array\n" +
+                "2 - to display array\n" +
+                "3 - to insert an element\n" +
+                "4 - to delete an element\n" +
+                "5 - to delete an index\n" +
+                "6 - to search an element\n" +
+                "7 - to sort array in ascending order\n" +
+                "8 - to print menu\n");
+
+
+    }
 }
