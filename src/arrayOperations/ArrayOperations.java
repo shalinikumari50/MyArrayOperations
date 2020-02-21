@@ -218,6 +218,14 @@ public class ArrayOperations implements Operations {
 
     @Override
     public int delete() {
-        return 0;
+        if (checkLength() == 0) {
+            return -1;
+        }
+        System.out.println("Enter element which is to be deleted");
+        int index = search(inputLength());
+        if (index < 0) {
+            return -1;
+        }
+        return deleteIndex(index);
     }
 }
