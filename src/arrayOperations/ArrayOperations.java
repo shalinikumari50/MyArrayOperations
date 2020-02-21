@@ -11,6 +11,14 @@ public class ArrayOperations implements Operations {
     private int memoryAllocated;
     private Scanner scanner;
 
+    public ArrayOperations() {
+        myArray = null;
+        arrayLength = 0;
+        arrayCreated = false;
+        memoryAllocated = 0;
+        scanner = new Scanner(System.in);
+    }
+
     @Override
     public int display() {
         return 0;
