@@ -66,6 +66,15 @@ public class ArrayOperations implements Operations {
         return true;
     }
 
+    public int checkLength() {
+        if (arrayLength == 0) {
+            System.out.println("No elements in array!");
+            return 0;
+        }
+        return arrayLength;
+    }
+
+
     @Override
     public int display() {
         return 0;
