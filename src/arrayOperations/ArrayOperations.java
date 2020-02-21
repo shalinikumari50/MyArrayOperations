@@ -105,7 +105,12 @@ public class ArrayOperations implements Operations {
 
     @Override
     public int search() {
-        return 0;
+        if (checkLength() == 0) {
+            return -1;
+        }
+        System.out.println("Enter element to be searched");
+        int element = inputInteger();
+        return search(element);
     }
 
     @Override
