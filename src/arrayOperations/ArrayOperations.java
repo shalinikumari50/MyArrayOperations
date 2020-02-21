@@ -148,6 +148,11 @@ public class ArrayOperations implements Operations {
         myArray = temp;
     }
 
+    public boolean isArrayCreated() {
+        return arrayCreated;
+    }
+
+
     @Override
     public int insert() {
         return 0;
