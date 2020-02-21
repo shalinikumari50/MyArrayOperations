@@ -77,6 +77,15 @@ public class ArrayOperations implements Operations {
 
     @Override
     public int display() {
+        if (checkLength() == 0) {
+            return -1;
+        }
+        System.out.print("Elements in array are : ");
+        for (int i = 0; i < arrayLength; i++) {
+            System.out.print(myArray[i] + " ");
+
+        }
+        System.out.println();
         return 0;
     }
 
