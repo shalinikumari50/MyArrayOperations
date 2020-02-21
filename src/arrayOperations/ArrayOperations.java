@@ -31,6 +31,41 @@ public class ArrayOperations implements Operations {
         return length;
     }
 
+    public boolean createArray() {
+        System.out.println("Enter length of array");
+        arrayLength = inputLength();
+        myArray = new int[arrayLength];
+        memoryAllocated = arrayLength;
+        for (int i = 0; i < arrayLength; i++) {
+            System.out.println("Enter element " + (i + 1) + ": ");
+            try {
+                myArray[i] = Integer.parseInt(scanner.nextLine().trim());
+            } catch (NumberFormatException nfe) {
+                while (true) {
+                    System.out.println("Invalid input. Enter again or press 'q' to return home");
+                    String inputByUser = scanner.nextLine().trim();
+                    if (inputByUser.equals("q")) {
+                        System.out.println("Array created");
+                        arrayCreated = true;
+                        return true;
+
+                    } else {
+                        try {
+                            myArray[i] = Integer.parseInt(inputByUser);
+                        } catch (NumberFormatException nfe2) {
+                            continue;
+                        }
+                        break;
+                    }
+
+                }
+            }
+        }
+        System.out.println("Array created");
+        arrayCreated = true;
+        return true;
+    }
+
     @Override
     public int display() {
         return 0;
