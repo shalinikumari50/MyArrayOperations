@@ -23,6 +23,14 @@ public class ArrayOperations implements Operations {
         return Integer.parseInt(scanner.nextLine().trim());
     }
 
+    public int inputLength() throws NumberFormatException, NegativeArraySizeException {
+        int length = Integer.parseInt(scanner.nextLine().trim());
+        if (length < 0) {
+            throw new NegativeArraySizeException();
+        }
+        return length;
+    }
+
     @Override
     public int display() {
         return 0;
