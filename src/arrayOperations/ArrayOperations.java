@@ -19,6 +19,10 @@ public class ArrayOperations implements Operations {
         scanner = new Scanner(System.in);
     }
 
+    public int inputInteger() throws NumberFormatException {
+        return Integer.parseInt(scanner.nextLine().trim());
+    }
+
     @Override
     public int display() {
         return 0;
