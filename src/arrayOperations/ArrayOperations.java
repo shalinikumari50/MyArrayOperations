@@ -228,4 +228,29 @@ public class ArrayOperations implements Operations {
         }
         return deleteIndex(index);
     }
+
+    public int sortArrayInAscendingOrder() {
+        if (checkLength() == 0) {
+            return -1;
+        }
+        int flag;
+        for (int i = 0; i < arrayLength - 1; i++) {
+            flag = 0;
+            for (int j = 0; j < arrayLength - 1 - i; j++) {
+                if (myArray[j] > myArray[j + 1]) {
+                    int temp = myArray[j];
+                    myArray[j] = myArray[j + 1];
+                    myArray[j + 1] = temp;
+                    flag = 1;
+                }
+            }
+            if (flag == 0) {
+                break;
+            }
+
+        }
+        System.out.println("Array is sorted");
+        display();
+        return 0;
+    }
 }
