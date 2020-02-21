@@ -113,6 +113,26 @@ public class ArrayOperations implements Operations {
         return search(element);
     }
 
+    public int validIndex(int index) throws NumberFormatException {
+        while (true) {
+            if (index < 0 || index >= arrayLength) {
+                System.out.println("Invalid position. Enter again or press 'q' to return home");
+                String inputByUser = scanner.nextLine().trim();
+                if (inputByUser.equals("q")) {
+                    return -1;
+
+                } else {
+
+                    index = Integer.parseInt(inputByUser);
+
+                }
+            } else {
+                break;
+            }
+        }
+        return index;
+    }
+
     @Override
     public int insert() {
         return 0;
