@@ -133,6 +133,21 @@ public class ArrayOperations implements Operations {
         return index;
     }
 
+    public void growSizeOfArray(int arrayLength) {
+        int[] temp;
+        if (arrayLength == 0) {
+            temp = new int[1];
+
+        } else {
+            temp = new int[arrayLength + (arrayLength / 2)];
+        }
+        memoryAllocated = temp.length;
+        for (int i = 0; i < arrayLength; i++) {
+            temp[i] = myArray[i];
+        }
+        myArray = temp;
+    }
+
     @Override
     public int insert() {
         return 0;
