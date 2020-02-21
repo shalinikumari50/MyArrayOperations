@@ -155,7 +155,44 @@ public class ArrayOperations implements Operations {
 
     @Override
     public int insert() {
-        return 0;
+        if (!isArrayCreated()) {
+            System.out.println("Create an array first!");
+            return -1;
+        }
+
+        System.out.println("Enter index at which the element needs to be inserted");
+        int index = inputInteger();
+        while (true) {
+            if (index >= 0 && index <= arrayLength) {
+                System.out.println("Enter element to be inserted");
+                int element = inputInteger();
+                if (memoryAllocated == arrayLength) {
+                    growSizeOfArray(arrayLength);
+                }
+                for (int i = arrayLength; i > index; i--) {
+                    myArray[i] = myArray[i - 1];
+                }
+                myArray[index] = element;
+                arrayLength += 1;
+                System.out.println("Element inserted");
+                return index;
+            } else {
+                System.out.println("Invalid position. Enter again or press 'q' to return home");
+                String inputByUser = scanner.nextLine().trim();
+                if (inputByUser.equals("q")) {
+                    break;
+                } else {
+                    try {
+                        index = Integer.parseInt(inputByUser);
+                    } catch (NumberFormatException nn) {
+                        System.out.println("Invalid input");
+                        break;
+                    }
+                }
+
+            }
+        }
+        return -1;
     }
 
     @Override
