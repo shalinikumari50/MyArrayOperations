@@ -195,6 +195,15 @@ public class ArrayOperations implements Operations {
         return -1;
     }
 
+    public int deleteIndex(int index) {
+        for (int i = index; i < (arrayLength - 1); i++) {
+            myArray[i] = myArray[i + 1];
+        }
+        arrayLength -= 1;
+        System.out.println("Element deleted");
+        return index;
+    }
+
     @Override
     public int delete() {
         return 0;
