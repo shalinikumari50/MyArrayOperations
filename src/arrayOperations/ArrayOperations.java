@@ -89,6 +89,20 @@ public class ArrayOperations implements Operations {
         return 0;
     }
 
+    public int search(int element) {
+
+        for (int i = 0; i < arrayLength; i++) {
+            if (myArray[i] == element) {
+                System.out.println("Element found at index " + i);
+                return i;
+            }
+
+        }
+        System.out.println("Element not found");
+        return -1;
+
+    }
+
     @Override
     public int search() {
         return 0;
