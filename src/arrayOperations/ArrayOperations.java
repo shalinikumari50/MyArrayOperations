@@ -204,6 +204,18 @@ public class ArrayOperations implements Operations {
         return index;
     }
 
+    public int deleteIndex() {
+        if (checkLength() == 0) {
+            return -1;
+        }
+        System.out.println("Enter index which is to be deleted");
+        int index = validIndex(inputInteger());
+        if (index > 0) {
+            return deleteIndex(index);
+        }
+        return -1;
+    }
+
     @Override
     public int delete() {
         return 0;
